@@ -1,5 +1,5 @@
-use rand::prelude::random;
 use clap::Parser;
+use rand::prelude::random;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
