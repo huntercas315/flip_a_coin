@@ -1,16 +1,18 @@
 use rand::prelude::random;
-use std::env;
+use clap::Parser;
+
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    #[arg(short, default_value_t = 1)]
+    flip_count: u8,
+}
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    // let args: Vec<String> = env::args().collect();
+    let args = Args::parse();
 
-    if args.len() >= 2 {
-        let count: i32 = args[1].parse().unwrap();
-
-        for _ in 0..count {
-            flip();
-        }
-    } else {
+    for _ in 0..args.flip_count {
         flip();
     }
 }
