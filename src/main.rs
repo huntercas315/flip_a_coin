@@ -9,7 +9,6 @@ struct Args {
 }
 
 fn main() {
-    // let args: Vec<String> = env::args().collect();
     let args = Args::parse();
 
     for _ in 0..args.flip_count {
